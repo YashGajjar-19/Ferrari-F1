@@ -50,26 +50,28 @@ nav img {
     gap: 1vw;
 }
 
-#nav-part2 h4 { 
-    font-size: 1vw;
+#nav-part2 h4, .custom-btn { 
+    font-size: 0.7vw;
     color: #000000bb;
-    font-weight: 500;
     border: 1px solid rgba(0, 0, 0, 0.70);
     border-radius: 50px;
     padding: 1vw 1vw;
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-#nav-part2 h4 a { 
+#nav-part2 h4 a, .custom-btn span { 
     text-decoration: none;
     color: #000;
     position: relative;
     z-index: 9;
 }
 
-#nav-part2 h4::after { 
+#nav-part2 h4::after, .custom-btn::after { 
     content: '';
     position: absolute;
     height: 100%;
@@ -81,13 +83,22 @@ nav img {
     transition: all 0.4s ease;
 }
 
-#nav-part2 h4:hover::after { 
+#nav-part2 h4:hover::after, .custom-btn:hover::after { 
     bottom: 0;
     border-radius: 0%;
 }
 
-#nav-part2 h4:hover a { 
+#nav-part2 h4:hover a, .custom-btn:hover span { 
     color: #fff;
+}
+
+.page3-btn {
+    padding: 4vw 2vw;
+}
+
+.custom-btn {
+    display: inline-block;
+    padding: 0.8vw 0.8vw;
 }
 
 #center { 
@@ -293,7 +304,7 @@ nav img {
 
     to { 
         filter: blur(30px);
-        transform: translate(-10%, 10%) skew(-12deg);
+        transform: translate(-10%, 10%) skew(-10deg);
     }
 }
 
@@ -301,4 +312,90 @@ nav img {
     min-height: 100vh;
     width: 100%;
     background-color: #EFEAE3;
+    padding: 7vw 0;
+}
+
+.elem-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    padding: 0 2vw;
+    margin-bottom: 4vw;
+}
+
+.elem-title .red-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #fe0c0c;
+    border-radius: 50%;
+}
+
+.elem-title h4 {
+    font-size: 0.7vw;
+    font-weight: 100;
+}
+
+.elem { 
+    width: 100%;
+    height: 120px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+    overflow: hidden;
+}
+
+.elem h2 {
+    font-size: 3vw;
+    position: relative;
+    z-index: 9;
+}
+
+.elem .elem-details {
+    position: relative;
+    z-index: 9;
+    text-align: right;
+}
+
+.elem .elem-details h5 {
+    font-size: 0.6vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 0.2vw;
+}
+
+.elem .elem-details p {
+    font-size: 0.7vw;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.elem .overlay {  
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: #fe0c0c;
+    transition: all 0.2s ease;
+}
+
+.elem:hover .overlay{ 
+    top: 0;
+}
+
+#fixed-image { 
+    width: 23vw;
+    height: 30vw;
+    background-color: #fe0c0c;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
 }
