@@ -1,8 +1,15 @@
-if (window.LocomotiveScroll) {
-    new LocomotiveScroll({
-        el: document.querySelector('#main'),
-        smooth: true,
-    });
+function locomotiveAnimation() {
+    if (window.LocomotiveScroll) {
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('#main'),
+            smooth: true,
+        });
+
+        // Update scroll after a delay to account for image loading
+        setTimeout(() => {
+            scroll.update();
+        }, 1000);
+    }
 }
 
 var elemC = document.querySelector("#elem-container")
@@ -60,10 +67,6 @@ function swiperAnimatioin() {
             slidesPerView: "auto",
             centeredSlides: false,
             spaceBetween: 100,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
         });
     }
 }
@@ -89,11 +92,15 @@ function menuAnimation() {
     })
 }
 
-var loader = document.querySelector("#loader")
-setTimeout(function loaderAnimation() {
-    loader.style.top = "-100%"
-}, 4200)
+function loaderAnimation() {
+    var loader = document.querySelector("#loader")
+    setTimeout(function () {
+        loader.style.top = "-100%"
+    }, 2500)
+}
 
 page4Animation()
 swiperAnimatioin()
 menuAnimation()
+loaderAnimation()
+locomotiveAnimation()
